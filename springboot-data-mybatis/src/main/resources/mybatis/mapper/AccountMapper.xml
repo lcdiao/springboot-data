@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.lcdiao.springbootdatamybatis.mapper.AccountMapper">
+    <select id="getAccountById" resultType="cn.lcdiao.springbootdatamybatis.bean.Account">
+        SELECT * FROM account WHERE id=#{id}
+    </select>
+
+    <insert id="insertAccount" useGeneratedKeys="true" keyProperty="id">
+      INSERT INTO account(account,password,user_id) VALUES (#{account},#{password},#{userId})
+    </insert>
+
+</mapper>
